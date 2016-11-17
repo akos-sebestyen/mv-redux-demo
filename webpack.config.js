@@ -11,7 +11,7 @@ module.exports = {
       $: "jquery",
       jQuery: "jquery",
       "window.jQuery": "jquery",
-      "window.Tether": "tether"
+      "window.Tether": "tether",
     })
   ],
   module: {

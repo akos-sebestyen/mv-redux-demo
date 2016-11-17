@@ -1,38 +1,12 @@
 require('bootstrap');
-require('./styles/style.scss')
-import { createStore } from 'redux';
+require('./styles/style.scss');
 
-const counter = (state = 0, action) => {
-  console.log("previous state:");
-  console.log(state);
+import reducer from './reducer';
+import ngRedux from 'ng-redux';
+import CounterController from './CounterController';
 
-  console.log("action:");
-  console.log(action);
-  console.log("---------")
-
-  switch (action.type) {
-    case 'INCREMENT':
-      return state + 1;
-    case 'DECREMENT':
-      return state - 1;
-    default:
-      return state;
-  }
-};
-
-const store = createStore(counter);
-
-const render = () => {
-  document.getElementById('count-display').innerHTML = store.getState();
-};
-
-store.subscribe(render);
-render();
-
-document.getElementById('increment-count').addEventListener('click', () => {
-  store.dispatch({ type: 'INCREMENT' });
-});
-
-document.getElementById('decrement-count').addEventListener('click', () => {
-  store.dispatch({ type: 'DECREMENT' });
-});
+angular.module('app', [ngRedux])
+  .config(($ngReduxProvider) => {
+    $ngReduxProvider.createStoreWith(reducer);
+  })
+  .controller('CounterController', CounterController);

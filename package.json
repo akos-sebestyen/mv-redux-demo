@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "angular": "^1.5.8",
     "babel-cli": "^6.18.0",
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.7",
@@ -19,7 +20,9 @@
     "babel-preset-react": "^6.16.0",
     "bootstrap": "^4.0.0-alpha.5",
     "css-loader": "^0.25.0",
+    "exports-loader": "^0.6.3",
     "jquery": "^3.1.1",
+    "ng-redux": "^3.4.0-beta.1",
     "node-sass": "^3.10.1",
     "redux": "^3.6.0",
     "sass-loader": "^4.0.2",

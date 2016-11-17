@@ -2,15 +2,16 @@
 <head>
     <meta charset="utf-8">
 </head>
-<body>
-    <div class="container">
+<body ng-app="app">
+    <div class="container" ng-controller="CounterController as counter">
         <h1>Counter</h1>
 
-        <h4 id="count-display">0</h4>
+        <h4 id="count-display">{{counter.value}}</h4>
 
-        <button id="increment-count">Increment</button>
-        <button id="decrement-count">Decrement</button>
-
+        <button id="increment-count" ng-click="counter.increment()">Increment</button>
+        <button id="decrement-count" ng-click="counter.decrement()">Decrement</button>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
         <script type="text/javascript" src="bundle.js" charset="utf-8"></script>
     </div>
 </body>
