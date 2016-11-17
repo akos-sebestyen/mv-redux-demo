@@ -1,14 +1,9 @@
 require('bootstrap');
 require('./styles/style.scss')
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import createLogger from 'redux-logger';
 
 const counter = (state = 0, action) => {
-  console.log("previous state:");
-  console.log(state);
-
-  console.log("action:");
-  console.log(action);
-  console.log("---------")
 
   switch (action.type) {
     case 'INCREMENT':
@@ -20,7 +15,9 @@ const counter = (state = 0, action) => {
   }
 };
 
-const store = createStore(counter);
+
+const logger = createLogger();
+const store = createStore(counter, 0, applyMiddleware(logger));
 
 const render = () => {
   document.getElementById('count-display').innerHTML = store.getState();
