@@ -1,0 +1,13 @@
+@import "~bootstrap/scss/bootstrap";
+
+body {
+  background: #91d1ff;
+}
+
+button {
+  @extend .btn;
+}
+
+.container {
+  padding: 25px;
+}
