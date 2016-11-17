@@ -3,6 +3,13 @@ require('./styles/style.scss')
 import { createStore } from 'redux';
 
 const counter = (state = 0, action) => {
+  console.log("previous state:");
+  console.log(state);
+
+  console.log("action:");
+  console.log(action);
+  console.log("---------")
+
   switch (action.type) {
     case 'INCREMENT':
       return state + 1;
